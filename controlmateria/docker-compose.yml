@@ -1,0 +1,34 @@
+version: '3.3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: controlmaterias_app
+    #restart: always
+    depends_on:
+      - db-controlmaterias
+    ports:
+      - 8000:8000
+    volumes: 
+      - ./controlmaterias/:/app
+
+  db-controlmaterias:
+    image: mariadb
+    container_name: controlmaterias-db
+    #restart: always
+    environment:
+      MYSQL_DATABASE: controlmaterias
+      MYSQL_USER: controlmaterias_user
+      MYSQL_PASSWORD: "asjdghj"
+      MYSQL_ROOT_PASSWORD: admin1234
+    volumes:
+      - db-controlmaterias:/var/lib/mysql
+    ports:
+      - 3320:3306
+
+volumes:
+  db:    
+  db-controlmaterias:    
+
