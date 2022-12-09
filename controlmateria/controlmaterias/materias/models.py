@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Materia(models.Model):
-    siglas = models.CharField(max_length=8, primary_key=True)
+    siglas = models.CharField(primary_key=True, max_length=8)
     nombre = models.CharField(max_length=100, null=True)
     status = models.CharField(max_length=8, null=True)
     
@@ -11,7 +11,7 @@ class Materia(models.Model):
        return self.nombre
     
 class Alumno(models.Model):
-    matricula = models.CharField('Matrícula', max_length=8, primary_key=True)
+    matricula = models.CharField(primary_key=True, max_length=8)
     nombre = models.CharField(max_length=100, null=True)
     primer_apellido = models.CharField(max_length=100, null=True)
     segundo_apellido = models.CharField(max_length=100)
@@ -22,7 +22,7 @@ class Alumno(models.Model):
 
 
 class Aprobada(models.Model):
-    matricula = models.ForeignKey('materias.Alumno', verbose_name='Matrícula')
+    matricula = models.ForeignKey('materias.Alumno', on_delete=models.CASCADE )
 
 class Tiempo(models.Model):
     fecha_inicio = models.DateField(('Fecha de inicio'), auto_now=False, auto_now_add=False, null=True, blank=True)
