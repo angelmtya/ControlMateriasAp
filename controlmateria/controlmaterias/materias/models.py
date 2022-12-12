@@ -21,8 +21,8 @@ class Alumno(models.Model):
         return self.nombre
 
 
-class Aprobada(models.Model):
-    matricula = models.ForeignKey('materias.Alumno', on_delete=models.CASCADE )
+# class Aprobada(models.Model):
+#     matricula = models.ForeignKey('materias.Alumno', on_delete=models.CASCADE )
 
 class Tiempo(models.Model):
     fecha_inicio = models.DateField(('Fecha de inicio'), auto_now=False, auto_now_add=False, null=True, blank=True)
@@ -30,3 +30,7 @@ class Tiempo(models.Model):
 
     def __str__(self):
         return self.fecha_inicio
+    
+    
+class DirectorioModel(models.Model):
+    carpeta = models.FileField()

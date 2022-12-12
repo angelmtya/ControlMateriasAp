@@ -1,8 +1,16 @@
-<h1>Control de matearias aprobadas</h1>
 
-<input type="file" webkitdirectory>
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button>Gurdar</button>
+</form> 
 
-<button>Gurdar</button>
+
+
+
+
+
+
 
 
 
