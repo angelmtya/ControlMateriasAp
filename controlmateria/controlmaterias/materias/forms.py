@@ -14,3 +14,6 @@ class Directorio(forms.ModelForm):
             #carpeta': forms.Input(attrs={'class': 'form-control'})
             'carpeta': forms.FileInput(attrs={'class': 'form-control'})
         }
+        
+class UploadFileForm(forms.Form):
+     file = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))

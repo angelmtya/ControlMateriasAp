@@ -1,16 +1,18 @@
-
-<form method="POST">
-    {% csrf_token %}
-    {{form}}
-    <button>Gurdar</button>
-</form> 
-
-
-
-
-
-
-
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset= "ut-8">
+        <title> Subir archivos </title>
+    </head>
+    <body>
+        <H1>Sistema de Control materias de  aprobadas</H1>
+        <form method = "post" enctype = "multipart/form-data"> 
+        {% csrf_token %}
+            <input type="file" name = "file">
+            <button type = "submit"> Carga archivo </button>    
+        </form>
+    </body>
+</html>   
 
 
 

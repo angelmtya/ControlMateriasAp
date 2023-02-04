@@ -1,6 +1,5 @@
 from django.contrib import admin
-from materias.models import Materia, Alumno, Tiempo
+from materias.models import Materia, Alumno
 
 admin.site.register(Materia)
 admin.site.register(Alumno)
-admin.site.register(Tiempo)
